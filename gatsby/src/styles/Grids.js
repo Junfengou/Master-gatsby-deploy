@@ -1,9 +1,16 @@
 import styled from "styled-components"
 
 export const HomePageGrids = styled.div`
+    --columns: 2;
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
+    grid-template-columns: repeat(var(--columns), minmax(auto, 1fr));
+
+    @media(max-width: 800px)
+    {
+        --columns: 1;
+    }
+    
 `;
 
 
@@ -22,10 +29,14 @@ export const ItemStyles = styled.div`
         font-size: 0; //weird spacing issue if two image are next to each other, this will solve that issue
     }
     p {
-        transform: rotate(-2deg) translateY(-140%);
+        transform: rotate(-2deg) translateY(-10px);
+        margin: 0;
+        top: 0;
         position: absolute;
         width: 100%;
         left: 0;
+        font-size: 2rem;
+        font-size: clamp(12px, 5vw, 20px);
     }
     .mark {
         display: inline;

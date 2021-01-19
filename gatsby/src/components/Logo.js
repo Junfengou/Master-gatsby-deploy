@@ -5,7 +5,8 @@ import stripes from '../assets/images/stripes.svg';
 const LogoStyles = styled.div`
   /* This value controls the entire size of the logo*/
   font-size: 6px;
-  font-size: clamp(1px, 0.65vw, 8px); //min: 1px and max: 8px -- 0.65w will let the logo scale to the browser size
+  /* font-size: clamp(1px, 0.65vw, 8px); //min: 1px and max: 8px -- 0.65w will let the logo scale to the browser size */
+  font-size: 6px;
   width: 30em; //em is based on the font-size of the element. Refer back to the line above
   height: 30em;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);

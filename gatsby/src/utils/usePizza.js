@@ -43,8 +43,7 @@ function usePizza({ pizzas, values }) {
             name: values.name,
             email: values.email,
             mapleSyrup: values.mapleSyrup,
-        }
-        console.log(body)
+          };
 
         // 4. send this data to a serverless function when they check out
         const res = await fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {

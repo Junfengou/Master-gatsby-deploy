@@ -13,7 +13,7 @@ function Nav() {
             <ul>
                 <li><Link to="/">Hot now</Link></li>
                 <li><Link to="/pizza">Pizza Menu</Link></li>
-                <li><Link to="/"><Logo /></Link></li>
+                <li className="logo-item"><Link to="/"><Logo /></Link></li>
                 <li><Link to="/slicemasters">Home Slice Bois</Link></li>
                 <li><Link to="/order">Order Ahead!</Link></li>
             </ul>
@@ -68,15 +68,43 @@ const NavStyles = styled.nav`
     a {
         font-size: 3rem;
         text-decoration: none;
+        display: block;
         &:hover{
             color: var(--red)
         }
         &[aria-current="page"] {
             color: var(--red)
         }
+        @media(max-width: 800px)
+    {
+        font-size: 2rem;
     }
-    
-   
+}
+@media(max-width: 600px)
+{
+    --column: 4;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--grey);
+    padding-bottom: 2rem;
+    ul {
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(var(--column), 1fr);
+        justify-items: center;
+    }
+    .logo-item {
+        order: 0;
+        grid-column: 1 / -1;
+    }
+    .logo {
+        transform: none;
+    }
+}
+
+@media(max-width: 500px)
+{
+    --column: 2;
+}
+     
 `
 
 
